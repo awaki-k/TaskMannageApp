@@ -142,18 +142,52 @@ function seed(): Task[] {
     return [
         {
             id: id(),
-            text: "研究：資料レビュー",
+            text: "卒論",
             done: false,
             children: [
-                { id: id(), text: "論文Aを読む", done: false, children: [], priority: "high", due: "2025-08-16" },
-                { id: id(), text: "論文Bの要約", done: false, children: [], priority: "medium" },
+                { id: id(), text: "論文調査", done: false, children: [
+                    { id: id(), text: "論文A", done: true, children: [], priority: "medium", due: "2025-05-31" },
+                    { id: id(), text: "論文B", done: false, children: [], priority: "high", due: "2025-06-15" },
+                    { id: id(), text: "論文C", done: false, children: [], priority: "low", due: "2025-07-01" },
+                    ], priority: "high", due: "2025-12-16" },
+                { id: id(), text: "実装", done: false, children: [
+                    { id: id(), text: "環境構築", done: true, children: [], priority: "medium", due: "2025-06-15" },
+                    { id: id(), text: "基本機能", done: false, children: [], priority: "high", due: "2025-09-30" },
+                    { id: id(), text: "応用機能", done: false, children: [], priority: "medium", due: "2025-11-30" },
+                    ], priority: "medium" },
+                { id: id(), text: "実験", done: false, children: [
+                    { id: id(), text: "データ収集", done: true, children: [], priority: "high", due: "2025-07-31" },
+                    { id: id(), text: "データ分析", done: false, children: [], priority: "medium", due: "2025-10-15" },
+                    { id: id(), text: "結果整理", done: false, children: [], priority: "medium", due: "2025-11-15" },
+                    ], priority: "medium" },
+                { id: id(), text: "進捗報告", done: false, children: [
+                    { id: id(), text: "第1回", done: true, children: [], priority: "high", due: "2025-06-30" },
+                    { id: id(), text: "第2回", done: false, children: [], priority: "medium", due: "2025-10-31" },
+                    ], priority: "medium" },
+                { id: id(), text: "執筆", done: false, children: [
+                    { id: id(), text: "序論", done: true, children: [], priority: "medium", due: "2025-11-30" },
+                    { id: id(), text: "関連研究", done: false, children: [], priority: "medium", due: "2025-12-15" },
+                    { id: id(), text: "方法論", done: false, children: [], priority: "high", due: "2025-12-31" },
+                    { id: id(), text: "実験結果", done: false, children: [], priority: "high", due: "2026-01-15" },
+                    { id: id(), text: "考察", done: false, children: [], priority: "medium", due: "2026-01-31" },
+                    { id: id(), text: "結論", done: false, children: [], priority: "medium", due: "2026-02-15" },
+                    ], priority: "low" },
+                { id: id(), text: "最終提出", done: false, children: [
+                    { id: id(), text: "ドラフト提出", done: false, children: [], priority: "high", due: "2026-02-20" },
+                    { id: id(), text: "最終版提出", done: false, children: [], priority: "high", due: "2026-02-28" },
+                ], priority: "high" },
             ],
         },
         {
             id: id(),
-            text: "生活：買い物",
+            text: "英語の授業",
             done: false,
-            children: [{ id: id(), text: "牛乳", done: true, children: [], priority: "low" }],
+            children: [
+                { id: id(), text: "来週の課題提出", done: true, children: [], priority: "high",due:'2025-09-02' },
+                { id: id(), text: "次回のディスカッション準備", done: false, children: [], priority: "medium", due:'2025-09-05' },
+                { id: id(), text: "中間レポート執筆", done: false, children: [], priority: "low", due:'2025-10-15' },
+                { id: id(), text: "期末試験対策", done: false, children: [], priority: "medium", due:'2025-12-10' },
+            ],
         },
     ];
 }
