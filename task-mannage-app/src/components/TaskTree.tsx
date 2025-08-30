@@ -31,7 +31,7 @@ export default function TaskTree({
         <section className="panel">
             <div className="panel-head">
                 <h2>構造的タスク表示</h2>
-                <p className="muted">ドラッグ&ドロップで親子関係を変更／ルートに落とすと最上位へ</p>
+                {/*<p className="muted">ドラッグ&ドロップで親子関係を変更／ルートに落とすと最上位へ</p>*/}
             </div>
 
             <div className="root-drop glass" onDragOver={prevent} onDrop={(e) => handleRootDrop(e, onDropToRoot)}>

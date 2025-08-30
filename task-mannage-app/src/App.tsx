@@ -53,7 +53,7 @@ export default function App() {
             <div className="hero">
                 <div className="hero-inner">
                     <h1>構造化タスクメモリー</h1>
-                    <p className="muted">素早く入力 → 階層で整理。スマホでも快適。</p>
+                    {/*<p className="muted">素早く入力 → 階層で整理。スマホでも快適。</p>*/}
                     <div className="chips">
                         <span className="chip">全 {counts.total}</span>
                         <span className="chip">未完 {counts.active}</span>
@@ -97,7 +97,7 @@ export default function App() {
             {/* モバイル下部ナビ */}
             <nav className="bottom-nav">
                 <button className={`bn-item ${mode === "input" ? "active" : ""}`} onClick={() => setMode("input")}>入力</button>
-                <button className={`bn-item ${mode === "structure" ? "active" : ""}`} onClick={() => setMode("structure")}>構造</button>
+                <button className={`bn-item ${mode === "structure" ? "active" : ""}`} onClick={() => setMode("structure")}>タスク一覧</button>
             </nav>
         </main>
     );
