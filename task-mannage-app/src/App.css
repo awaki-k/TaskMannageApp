@@ -617,6 +617,87 @@ body {
 }
 /* ▲▲▲ モーダル表示用のCSS ▲▲▲ */
 
+.pill.memo-icon {
+  background-color: rgba(245, 158, 11, .15);
+  border-color: rgba(245, 158, 11, .35);
+  /* アイコンボタンに合わせるためpill固有のスタイルを微調整 */
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--bd);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.modal-body p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  color: var(--muted);
+}
+.modal-body ul {
+  padding-left: 20px;
+}
+
+/* ▼▼▼ ローディングスピナー用のスタイルを追加 ▼▼▼ */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--brand);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /*:root {*/
 /*  --bg: #0b1220;*/
 /*  --bg2: #0e1629;*/
@@ -641,7 +722,7 @@ body {
 
 /*html {*/
 /*  height: 100%;*/
-/*  overflow-y: scroll;  !* 縦スクロールバーを常に表示 *!*/
+/*  overflow-y: scroll;*/
 /*  margin: 0;*/
 /*}*/
 
@@ -651,7 +732,7 @@ body {
 /*  linear-gradient(180deg, var(--bg), var(--bg2));*/
 /*  color: var(--txt);*/
 /*  display: flex;*/
-/*  flex-direction: column;  !* 全体を縦に配置 *!*/
+/*  flex-direction: column;*/
 /*  min-height: 100vh;*/
 /*  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Apple Color Emoji", "Segoe UI Emoji";*/
 /*  -webkit-font-smoothing: antialiased;*/
@@ -660,11 +741,11 @@ body {
 /*}*/
 
 /*.hero {*/
-/*  padding: 16px 8px;  !* パディングを小さく *!*/
+/*  padding: 16px 8px;*/
 /*  background: linear-gradient(135deg, rgba(106, 166, 255, .25), rgba(155, 123, 255, .18));*/
 /*  border-bottom: 1px solid var(--bd);*/
 /*  backdrop-filter: blur(6px);*/
-/*  width: 100%; !* 画面幅に合わせる *!*/
+/*  width: 100%;*/
 /*  position: relative;*/
 /*  top: 0;*/
 /*  left: 0;*/
@@ -675,10 +756,10 @@ body {
 /*}*/
 
 /*.hero h1 {*/
-/*  font-size: 1.5em;  !* フォントサイズを小さく *!*/
+/*  font-size: 1.5em;*/
 /*  margin: 0;*/
 /*  padding-bottom: 8px;*/
-/*  display: none;  !* 文字を非表示に *!*/
+/*  display: none;*/
 /*}*/
 
 /*.muted {*/
@@ -730,12 +811,12 @@ body {
 
 /*!* Container & Panel *!*/
 /*.container {*/
-/*  width: 100%;  !* 最大幅を100%に *!*/
+/*  width: 100%;*/
 /*  margin: 0 auto;*/
 /*  padding: 0 16px;*/
 /*  box-sizing: border-box;*/
-/*  overflow-y: auto;  !* 縦方向のみスクロール可能 *!*/
-/*  padding-bottom: 80px;  !* 下部にスペースを確保 *!*/
+/*  overflow-y: auto;*/
+/*  padding-bottom: 80px;*/
 /*}*/
 
 /*.panel {*/
@@ -934,7 +1015,7 @@ body {
 /*  content: '';*/
 /*  position: absolute;*/
 /*  top: 0;*/
-/*  height: 100%;*/
+/*  height: 110%;*/
 /*  left: -15px;*/
 /*  width: 1px;*/
 /*  background-color: var(--muted);*/
@@ -1133,34 +1214,40 @@ body {
 /*  font-weight: bold;*/
 /*}*/
 
+/*.pill.memo-icon {*/
+/*  background-color: rgba(245, 158, 11, .15);*/
+/*  border-color: rgba(245, 158, 11, .35);*/
+/*  padding: 0;*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*  display: inline-flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  font-size: 14px;*/
+/*}*/
+
+/*!* ▼▼▼ ホバー表示用のCSSを再度追加 ▼▼▼ *!*/
 /*.task-tooltip {*/
 /*  position: absolute;*/
-/*  bottom: 115%; !* カードの上側に表示 *!*/
+/*  bottom: 115%;*/
 /*  left: 50%;*/
 /*  transform: translateX(-50%);*/
-
 /*  background-color: var(--bg2);*/
 /*  color: var(--txt);*/
 /*  padding: 8px 12px;*/
 /*  border-radius: 8px;*/
 /*  border: 1px solid var(--bd);*/
 /*  box-shadow: var(--shadow);*/
-
 /*  font-size: 14px;*/
 /*  max-width: 300px;*/
 /*  width: max-content;*/
 /*  text-align: left;*/
-
 /*  z-index: 10;*/
-
 /*  opacity: 0;*/
 /*  visibility: hidden;*/
 /*  transition: opacity 0.2s ease, visibility 0.2s ease;*/
 /*  white-space: pre-wrap;*/
-
-/*  !* ▼▼▼ 修正箇所: この一行を追加 ▼▼▼ *!*/
 /*  overflow-wrap: break-word;*/
-/*  !* ▲▲▲ 修正箇所 ▲▲▲ *!*/
 /*}*/
 
 /*.card:hover .task-tooltip {*/
@@ -1178,11 +1265,54 @@ body {
 /*  border-style: solid;*/
 /*  border-color: var(--bd) transparent transparent transparent;*/
 /*}*/
+/*!* ▲▲▲ ホバー表示用のCSS ▲▲▲ *!*/
 
-/*.pill.memo-icon {*/
-/*  background-color: rgba(245, 158, 11, .15);*/
-/*  border-color: rgba(245, 158, 11, .35);*/
-/*  padding: 4px 6px;*/
-/*  font-size: 14px;*/
-/*  line-height: 1;*/
+
+/*!* ▼▼▼ モーダル表示用のCSS ▼▼▼ *!*/
+/*.modal-overlay {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  background-color: rgba(0, 0, 0, 0.7);*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  z-index: 1000;*/
 /*}*/
+
+/*.modal-content {*/
+/*  width: 90%;*/
+/*  max-width: 600px;*/
+/*  padding: 20px;*/
+/*  border-radius: 16px;*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
+/*.modal-header {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  border-bottom: 1px solid var(--bd);*/
+/*  padding-bottom: 12px;*/
+/*  margin-bottom: 12px;*/
+/*}*/
+
+/*.modal-header h3 {*/
+/*  margin: 0;*/
+/*  font-size: 1.2em;*/
+/*  white-space: nowrap;*/
+/*  overflow: hidden;*/
+/*  text-overflow: ellipsis;*/
+/*}*/
+
+/*.modal-body p {*/
+/*  margin: 0;*/
+/*  white-space: pre-wrap;*/
+/*  overflow-wrap: break-word;*/
+/*  max-height: 60vh;*/
+/*  overflow-y: auto;*/
+/*  color: var(--muted);*/
+/*}*/
+/*!* ▲▲▲ モーダル表示用のCSS ▲▲▲ *!*/
