@@ -345,19 +345,19 @@ function seed(): Task[] {
             id: id(), text: "卒論", done: false, createdAt: createdAt(),
             children: [
                 { id: id(), text: "論文調査", done: false, createdAt: createdAt(), children: [
-                        { id: id(), text: "論文A", done: true, children: [], priority: "medium", due: "2025-05-31", createdAt: createdAt(), completedAt: new Date(now.getTime() - (20 * 1000 * 3600 * 24)) },
-                        { id: id(), text: "論文B", done: false, children: [], priority: "high", due: "2025-06-15", createdAt: createdAt(), note: "最重要論文。念入りに読む。" },
-                        { id: id(), text: "論文C", done: false, children: [], priority: "low", due: "2025-07-01", createdAt: createdAt() },
+                        { id: id(), text: "Talk2Data", done: true, children: [], priority: "medium", due: "2025-08-10", createdAt: createdAt(), completedAt: new Date(now.getTime() - (20 * 1000 * 3600 * 24)),note: "関連研究として重要な論文。ざっと目を通す。" },
+                        { id: id(), text: "QUIS", done: false, children: [], priority: "high", due: "2025-08-20", createdAt: createdAt(), note: "最重要論文。念入りに読む。" },
+                        { id: id(), text: "TaskVis", done: false, children: [], priority: "low", due: "2025-09-10", createdAt: createdAt(),note: "関連研究として軽く目を通す程度で良い。" },
                     ], priority: "high", due: "2025-12-16" },
                 { id: id(), text: "実装", done: false, createdAt: createdAt(), children: [
                         { id: id(), text: "環境構築", done: true, children: [], priority: "medium", due: "2025-06-15", createdAt: createdAt(), completedAt: new Date(now.getTime() - (15 * 1000 * 3600 * 24)) },
                         { id: id(), text: "基本機能", done: false, children: [], priority: "high", due: "2025-09-30", createdAt: createdAt(), note: "ユーザー認証（JWT）\nタスクのCRUD操作\n親子関係の紐付け" },
                         { id: id(), text: "応用機能", done: false, children: [], priority: "medium", due: "2025-11-30", createdAt: createdAt() },
-                    ], priority: "medium" },
+                    ], priority: "high" },
                 { id: id(), text: "実験", done: false, createdAt: createdAt(), children: [
                         { id: id(), text: "データ収集", done: true, children: [], priority: "high", due: "2025-07-31", createdAt: createdAt(), completedAt: new Date(now.getTime() - (10 * 1000 * 3600 * 24)) },
                         { id: id(), text: "データ分析", done: false, children: [], priority: "medium", due: "2025-10-15", createdAt: createdAt() },
-                        { id: id(), text: "結果整理", done: false, children: [], priority: "medium", due: "2025-11-15", createdAt: createdAt(), note: "実験Aと実験Bの結果を比較検討する。\n特に、提案手法の有効性が示されているグラフを重点的に分析し、考察の材料を洗い出す。\n予期せぬ結果が出た点については、その原因を深掘りする必要がある。\nこのメモは長文テスト用です。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+                        { id: id(), text: "結果整理", done: false, children: [], priority: "medium", due: "2025-11-15", createdAt: createdAt(), note: "機械学習の最適学習率の結果を比較検討する。\n特に、提案手法の有効性が示されているグラフを重点的に分析し、考察の材料を洗い出す。\n予期せぬ結果が出た点については、その原因を深掘りする必要がある。" },
                     ], priority: "medium" },
                 { id: id(), text: "進捗報告", done: false, createdAt: createdAt(), children: [
                         { id: id(), text: "第1回", done: true, children: [], priority: "high", due: "2025-06-30", createdAt: createdAt(), completedAt: new Date(now.getTime() - (12 * 1000 * 3600 * 24)) },
@@ -374,7 +374,7 @@ function seed(): Task[] {
                 { id: id(), text: "最終提出", done: false, createdAt: createdAt(), children: [
                         { id: id(), text: "ドラフト提出", done: false, children: [], priority: "high", due: "2026-02-20", createdAt: createdAt() },
                         { id: id(), text: "最終版提出", done: false, children: [], priority: "high", due: "2026-02-28", createdAt: createdAt(), note: "先生に提出前に誤字脱字がないか最終確認してもらうこと。" },
-                    ], priority: "high" },
+                    ], priority: "medium" },
             ],
         },
         {
