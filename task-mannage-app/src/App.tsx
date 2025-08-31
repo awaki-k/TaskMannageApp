@@ -121,6 +121,7 @@ export default function App() {
         setIsReportModalOpen(false);
     };
 
+    // @ts-ignore
     const handleGenerateReport = async (userResponses: Record<string, { blocker: string; progress: string }>) => {
         if (!reportAnalysis) return;
         setIsGenerating(true);
@@ -169,6 +170,7 @@ export default function App() {
         // ▲▲▲ 修正箇所 ▲▲▲
 
         try {
+            // @ts-ignore
             const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
