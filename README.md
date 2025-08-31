@@ -95,7 +95,7 @@ App -> ReportModal: 表示/コピー
 ### セットアップ
 ```bash
 # リポジトリの取得
-git clone https://github.com/awaki-k/TaskMannageApp/tree/main/task-mannage-app
+git clone [https://github.com/awaki-k/TaskMannageApp/tree/main/task-mannage-app](https://github.com/awaki-k/TaskMannageApp.git)
 cd flow-mind
 
 # 依存関係のインストール
